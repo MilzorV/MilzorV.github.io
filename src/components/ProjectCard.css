@@ -1,0 +1,111 @@
+.project-card {
+  display: block;
+  margin-bottom: 1.5rem;
+}
+
+.project-card .card {
+  background-color: var(--cream);
+  border: 2px solid var(--latte);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 16px rgba(139, 115, 85, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card .card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--mocha), var(--cappuccino));
+}
+
+.project-card .card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(139, 115, 85, 0.15);
+  border-color: var(--cappuccino);
+}
+
+.project-card .card h3 {
+  margin: 0 0 0.5rem 0;
+  color: var(--espresso);
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.project-card .card .date {
+  color: var(--mocha);
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+.project-card .description {
+  color: var(--coffee-brown);
+  margin: 0 0 1.5rem 0;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.project-card .skills-section {
+  margin-top: 1rem;
+}
+
+.project-card .skills-label {
+  font-weight: 600;
+  color: var(--mocha);
+  margin-right: 0.75rem;
+  font-size: 0.95rem;
+}
+
+.project-card .skills-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.project-card .skills-list li {
+  background-color: var(--steam);
+  border: 1px solid var(--latte);
+  border-radius: 6px;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.85rem;
+  color: var(--coffee-brown);
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.project-card .skills-list li:hover {
+  background-color: var(--latte);
+  border-color: var(--cappuccino);
+  transform: scale(1.05);
+}
+
+/* Responsive design for project cards */
+@media (max-width: 768px) {
+  .project-card .card {
+    padding: 1.25rem;
+  }
+  
+  .project-card .card h3 {
+    font-size: 1.25rem;
+  }
+  
+  .project-card .skills-list {
+    gap: 0.4rem;
+  }
+  
+  .project-card .skills-list li {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.8rem;
+  }
+} 
