@@ -1,10 +1,30 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import ProjectCard from './components/ProjectCard';
+import ThemeSwitcher from './components/ThemeSwitcher';
 
 function App() {
+  const [theme, setTheme] = useState('auto');
+
+  useEffect(() => {
+    // Load theme from localStorage
+    const savedTheme = localStorage.getItem('theme') || 'auto';
+    setTheme(savedTheme);
+  }, []);
+
+  const handleThemeChange = (newTheme) => {
+    setTheme(newTheme);
+    localStorage.setItem('theme', newTheme);
+  };
+
+  useEffect(() => {
+    // Apply theme to document
+    document.documentElement.setAttribute('data-theme', theme);
+  }, [theme]);
+
   return (
     <div className="App">
+      <ThemeSwitcher currentTheme={theme} onThemeChange={handleThemeChange} />
       <header className="header">
         <h1>Miłosz Słowiński</h1>
       </header>

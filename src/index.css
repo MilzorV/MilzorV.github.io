@@ -10,9 +10,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #F5F5DC; /* Flat white background */
-  color: #2C1810; /* Dark coffee brown text */
+  background-color: var(--flat-white);
+  color: var(--coffee-brown);
   line-height: 1.6;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 code {
@@ -20,7 +21,7 @@ code {
     monospace;
 }
 
-/* Coffee flat-white theme colors */
+/* Light coffee theme colors (default) */
 :root {
   --flat-white: #F5F5DC;
   --coffee-brown: #2C1810;
@@ -30,4 +31,30 @@ code {
   --mocha: #8B7355;
   --cream: #FDFBF7;
   --steam: #F8F6F0;
+}
+
+/* Dark coffee theme colors */
+[data-theme="dark"] {
+  --flat-white: #1A0F0A;
+  --coffee-brown: #E6D7C3;
+  --latte: #3C2A1A;
+  --espresso: #F5F5DC;
+  --cappuccino: #8B7355;
+  --mocha: #D4C4A8;
+  --cream: #2C1810;
+  --steam: #3C2A1A;
+}
+
+/* System preference for automatic mode */
+@media (prefers-color-scheme: dark) {
+  [data-theme="auto"] {
+    --flat-white: #1A0F0A;
+    --coffee-brown: #E6D7C3;
+    --latte: #3C2A1A;
+    --espresso: #F5F5DC;
+    --cappuccino: #8B7355;
+    --mocha: #D4C4A8;
+    --cream: #2C1810;
+    --steam: #3C2A1A;
+  }
 } 
