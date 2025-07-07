@@ -57,6 +57,45 @@
   margin-top: 1rem;
 }
 
+/* Coursework content */
+.coursework-content {
+  margin-top: 1rem;
+}
+
+.coursework-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.coursework-item {
+  background-color: var(--cream);
+  border: 2px solid var(--latte);
+  border-radius: 8px;
+  padding: 1rem;
+  color: var(--coffee-brown);
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.coursework-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--mocha), var(--cappuccino));
+}
+
+.coursework-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(139, 115, 85, 0.15);
+  border-color: var(--cappuccino);
+}
+
 /* Responsive design */
 @media (max-width: 768px) {
   .App {
